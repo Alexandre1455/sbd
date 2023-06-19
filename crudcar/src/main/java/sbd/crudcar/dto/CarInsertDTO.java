@@ -1,32 +1,18 @@
-package sbd.crudcar.entities;
+package sbd.crudcar.dto;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import sbd.crudcar.dto.CarInsertDTO;
+import sbd.crudcar.entities.Car;
 
-@Entity
-@Table(name = "tb_cars")
-public class Car {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+public class CarInsertDTO {
 	private String modelo;
 	private Integer ano;
 	private String renavam;
 	private String placa;
 	private String cor;
-	
-	@Column(name = "preco_diaria")
 	private Double precoDiaria;
 	
-	public Car() {}
+	public CarInsertDTO() {}
 
-	public Car(String modelo, Integer ano, String renavam, String placa, String cor, Double precoDiaria) {
+	public CarInsertDTO(String modelo, Integer ano, String renavam, String placa, String cor, Double precoDiaria) {
 		this.modelo = modelo;
 		this.ano = ano;
 		this.renavam = renavam;
@@ -35,21 +21,13 @@ public class Car {
 		this.precoDiaria = precoDiaria;
 	}
 	
-	public Car(CarInsertDTO car) {
+	public CarInsertDTO(Car car) {
 		this.modelo = car.getModelo();
 		this.ano = car.getAno();
 		this.renavam = car.getRenavam();
 		this.placa = car.getPlaca();
 		this.cor = car.getCor();
 		this.precoDiaria = car.getPrecoDiaria();
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getModelo() {
@@ -99,5 +77,4 @@ public class Car {
 	public void setPrecoDiaria(Double precoDiaria) {
 		this.precoDiaria = precoDiaria;
 	}
-	
 }

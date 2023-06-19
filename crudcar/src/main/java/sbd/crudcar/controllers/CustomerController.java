@@ -12,51 +12,45 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import sbd.crudcar.dto.CarInsertDTO;
-import sbd.crudcar.dto.CarReadDTO;
-import sbd.crudcar.services.CarService;
+import sbd.crudcar.dto.CustomerInsertDTO;
+import sbd.crudcar.dto.CustomerReadDTO;
+import sbd.crudcar.services.CustomerService;
 
 @RestController
-@RequestMapping(value = "/cars")
-public class CarController {
+@RequestMapping("/customers")
+public class CustomerController {
 	
 	@Autowired
-	private CarService service;
+	private CustomerService service;
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public void insert(@RequestBody CarInsertDTO car) {
-		service.insert(car);
+	public void insert(@RequestBody CustomerInsertDTO dto) {
+		service.insert(dto);
 	}
 	
 	@GetMapping
 	@ResponseStatus(HttpStatus.OK)
-	public List<CarReadDTO> findAll() {
+	public List<CustomerReadDTO> findAll() {
 		return service.findAll();
 	}
 	
 	@GetMapping("/{id}")
 	@ResponseStatus(HttpStatus.OK)
-	public CarReadDTO findById(@PathVariable("id") Long id) {
+	public CustomerReadDTO findById(@PathVariable("id") Long id) {
 		try { return service.findById(id); }
 		catch (NoSuchElementException e) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 		}
 	}
 	
-	@GetMapping("/filter")
-	public List<CarReadDTO> findByModel(@RequestParam(defaultValue = "") String model) {
-		return service.findByModel(model);
-	}
-	
 	@PutMapping("/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void update(@PathVariable("id") Long id, @RequestBody CarInsertDTO dto) {
+	public void update(@PathVariable("id") Long id, @RequestBody CustomerInsertDTO dto) {
 		try { service.update(id, dto); }
 		catch (NoSuchElementException e) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND);

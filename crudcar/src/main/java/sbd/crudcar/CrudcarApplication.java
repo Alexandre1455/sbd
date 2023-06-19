@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 public class CrudcarApplication {
 
 	@Bean
-	public ModelMapper modelMapper() {
+	ModelMapper modelMapper() {
 		ModelMapper modelMapper = new ModelMapper();
 		modelMapper.getConfiguration().setSkipNullEnabled(true);
 		return modelMapper;
