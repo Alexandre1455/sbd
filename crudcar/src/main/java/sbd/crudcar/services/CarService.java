@@ -41,7 +41,21 @@ public class CarService {
 	
 	@Transactional(readOnly = true)
 	public List<CarReadDTO> findByModel(String model) {
-		List<Car> list = repository.findByModel(model);
+		List<Car> list = repository.findByModelContaining(model);
+		List<CarReadDTO> listDTO = list.stream().map((car) -> new CarReadDTO(car)).collect(Collectors.toList()); 
+		return listDTO;
+	}
+	
+	@Transactional(readOnly = true)
+	public List<CarReadDTO> findByYear(Integer year) {
+		List<Car> list = repository.findByYear(year);
+		List<CarReadDTO> listDTO = list.stream().map((car) -> new CarReadDTO(car)).collect(Collectors.toList()); 
+		return listDTO;
+	}
+	
+	@Transactional(readOnly = true)
+	public List<CarReadDTO> findByDailyRate(Double min, Double max) {
+		List<Car> list = repository.findByDailyRateBetween(min, max);
 		List<CarReadDTO> listDTO = list.stream().map((car) -> new CarReadDTO(car)).collect(Collectors.toList()); 
 		return listDTO;
 	}

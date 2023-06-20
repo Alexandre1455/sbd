@@ -3,47 +3,47 @@ package sbd.crudcar.dto;
 import sbd.crudcar.entities.Car;
 
 public class CarInsertDTO {
-	private String modelo;
-	private Integer ano;
+	private String model;
+	private Integer year;
 	private String renavam;
-	private String placa;
-	private String cor;
-	private Double precoDiaria;
+	private String plate;
+	private String color;
+	private Double dailyRate;
 	
 	public CarInsertDTO() {}
 
-	public CarInsertDTO(String modelo, Integer ano, String renavam, String placa, String cor, Double precoDiaria) {
-		this.modelo = modelo;
-		this.ano = ano;
+	public CarInsertDTO(String model, Integer year, String renavam, String plate, String color, Double dailyRate) {
+		this.model = model;
+		this.year = year;
 		this.renavam = renavam;
-		this.placa = placa;
-		this.cor = cor;
-		this.precoDiaria = precoDiaria;
+		this.plate = plate;
+		this.color = color;
+		this.dailyRate = dailyRate;
 	}
 	
 	public CarInsertDTO(Car car) {
-		this.modelo = car.getModelo();
-		this.ano = car.getAno();
+		this.model = car.getModel();
+		this.year = car.getYear();
 		this.renavam = car.getRenavam();
-		this.placa = car.getPlaca();
-		this.cor = car.getCor();
-		this.precoDiaria = car.getPrecoDiaria();
+		this.plate = car.getPlate();
+		this.color = car.getColor();
+		this.dailyRate = car.getDailyRate();
 	}
 
-	public String getModelo() {
-		return modelo;
+	public String getModel() {
+		return model;
 	}
 
-	public void setModelo(String modelo) {
-		this.modelo = modelo;
+	public void setModel(String model) {
+		this.model = model;
 	}
 
-	public Integer getAno() {
-		return ano;
+	public Integer getYear() {
+		return year;
 	}
 
-	public void setAno(Integer ano) {
-		this.ano = ano;
+	public void setYear(Integer year) {
+		this.year = year;
 	}
 
 	public String getRenavam() {
@@ -54,27 +54,27 @@ public class CarInsertDTO {
 		this.renavam = renavam;
 	}
 
-	public String getPlaca() {
-		return placa;
+	public String getPlate() {
+		return plate;
 	}
 
-	public void setPlaca(String placa) {
-		this.placa = placa;
+	public void setPlate(String plate) {
+		this.plate = plate;
 	}
 
-	public String getCor() {
-		return cor;
+	public String getColor() {
+		return color;
 	}
 
-	public void setCor(String cor) {
-		this.cor = cor;
+	public void setColor(String color) {
+		this.color = color;
 	}
 
-	public Double getPrecoDiaria() {
-		return precoDiaria;
+	public Double getDailyRate() {
+		return dailyRate;
 	}
 
-	public void setPrecoDiaria(Double precoDiaria) {
-		this.precoDiaria = precoDiaria;
+	public void setDailyRate(Double dailyRate) {
+		this.dailyRate = dailyRate;
 	}
 }

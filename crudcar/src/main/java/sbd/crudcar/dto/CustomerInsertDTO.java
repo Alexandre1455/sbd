@@ -1,26 +1,26 @@
 package sbd.crudcar.dto;
 
 public class CustomerInsertDTO {
-	private String nome;
+	private String name;
 	private String email;
-	private String tel;
-	private String senha;
+	private String phone;
+	private String password;
 	
 	public CustomerInsertDTO() {}
 
-	public CustomerInsertDTO(String nome, String email, String tel, String senha) {
-		this.nome = nome;
+	public CustomerInsertDTO(String name, String email, String phone, String password) {
+		this.name = name;
 		this.email = email;
-		this.tel = tel;
-		this.senha = senha;
+		this.phone = phone;
+		this.password = password;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getEmail() {
@@ -31,19 +31,19 @@ public class CustomerInsertDTO {
 		this.email = email;
 	}
 
-	public String getTel() {
-		return tel;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setTel(String tel) {
-		this.tel = tel;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
-	public String getSenha() {
-		return senha;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setSenha(String senha) {
-		this.senha = senha;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 }

@@ -5,25 +5,25 @@ import sbd.crudcar.entities.Car;
 public class CarReadDTO {
 	private Long id;
 	private String modelo;
-	private Integer ano;
-	private String cor;
-	private Double precoDiaria;
+	private Integer year;
+	private String color;
+	private Double dailyRate;
 	
 	public CarReadDTO() {}
 
-	public CarReadDTO(String modelo, Integer ano, String cor, Double precoDiaria) {
+	public CarReadDTO(String modelo, Integer year, String color, Double dailyRate) {
 		this.modelo = modelo;
-		this.ano = ano;
-		this.cor = cor;
-		this.precoDiaria = precoDiaria;
+		this.year = year;
+		this.color = color;
+		this.dailyRate = dailyRate;
 	}
 	
 	public CarReadDTO(Car car) {
 		this.id = car.getId();
-		this.modelo = car.getModelo();
-		this.ano = car.getAno();
-		this.cor = car.getCor();
-		this.precoDiaria = car.getPrecoDiaria();
+		this.modelo = car.getModel();
+		this.year = car.getYear();
+		this.color = car.getColor();
+		this.dailyRate = car.getDailyRate();
 	}
 	
 	public Long getId() {
@@ -34,36 +34,36 @@ public class CarReadDTO {
 		this.id = id;
 	}
 
-	public String getModelo() {
+	public String getModel() {
 		return modelo;
 	}
 
-	public void setModelo(String modelo) {
+	public void setModel(String modelo) {
 		this.modelo = modelo;
 	}
 
-	public Integer getAno() {
-		return ano;
+	public Integer getYear() {
+		return year;
 	}
 
-	public void setAno(Integer ano) {
-		this.ano = ano;
+	public void setYear(Integer year) {
+		this.year = year;
 	}
 
-	public String getCor() {
-		return cor;
+	public String getColor() {
+		return color;
 	}
 
-	public void setCor(String cor) {
-		this.cor = cor;
+	public void setColor(String color) {
+		this.color = color;
 	}
 
-	public Double getPrecoDiaria() {
-		return precoDiaria;
+	public Double getDailyRate() {
+		return dailyRate;
 	}
 
-	public void setPrecoDiaria(Double precoDiaria) {
-		this.precoDiaria = precoDiaria;
+	public void setDailyRate(Double dailyRate) {
+		this.dailyRate = dailyRate;
 	}
 	
 }

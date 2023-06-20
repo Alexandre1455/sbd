@@ -4,22 +4,22 @@ import sbd.crudcar.entities.Customer;
 
 public class CustomerReadDTO {
 	private Long id;
-	private String nome;
+	private String name;
 	private String email;
-	private String tel;
+	private String phone;
 	
-	public CustomerReadDTO(Long id, String nome, String email, String tel) {
+	public CustomerReadDTO(Long id, String name, String email, String phone) {
 		this.id = id;
-		this.nome = nome;
+		this.name = name;
 		this.email = email;
-		this.tel = tel;
+		this.phone = phone;
 	}
 	
 	public CustomerReadDTO(Customer customer) {
 		this.id = customer.getId();
-		this.nome = customer.getNome();
+		this.name = customer.getName();
 		this.email = customer.getEmail();
-		this.tel = customer.getTel();
+		this.phone = customer.getPhone();
 	}
 
 	public Long getId() {
@@ -30,12 +30,12 @@ public class CustomerReadDTO {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getEmail() {
@@ -46,12 +46,12 @@ public class CustomerReadDTO {
 		this.email = email;
 	}
 
-	public String getTel() {
-		return tel;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setTel(String tel) {
-		this.tel = tel;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 	
 }

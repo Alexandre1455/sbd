@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
@@ -49,9 +48,22 @@ public class CarController {
 		}
 	}
 	
-	@GetMapping("/filter")
-	public List<CarReadDTO> findByModel(@RequestParam(defaultValue = "") String model) {
+	@GetMapping("/model/{model}")
+	@ResponseStatus(HttpStatus.OK)
+	public List<CarReadDTO> findByModel(@PathVariable String model) {
 		return service.findByModel(model);
+	}
+	
+	@GetMapping("/year/{year}")
+	@ResponseStatus(HttpStatus.OK)
+	public List<CarReadDTO> findByYear(@PathVariable Integer year) {
+		return service.findByYear(year);
+	}
+	
+	@GetMapping("/daily-rate/{min}/{max}")
+	@ResponseStatus(HttpStatus.OK)
+	public List<CarReadDTO> findByDailyRate(@PathVariable Double min, @PathVariable Double max) {
+		return service.findByDailyRate(min, max);
 	}
 	
 	@PutMapping("/{id}")
